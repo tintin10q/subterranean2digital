@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/VHDLProject/tb_modaddn_mult5_isim_beh.exe" -prj "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/VHDLProject/tb_modaddn_mult5_beh.prj" "work.tb_modaddn_mult5" 
