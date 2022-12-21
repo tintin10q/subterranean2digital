@@ -3,13 +3,13 @@
   <version>1</version>
   <attributes>
     <entry>
-      <string>Width</string>
-      <int>9</int>
-    </entry>
-    <entry>
       <string>Description</string>
       <string>ι : si ← si + δi
 where δ_i = 1 if i = 0 else 1</string>
+    </entry>
+    <entry>
+      <string>Width</string>
+      <int>9</int>
     </entry>
   </attributes>
   <visualElements>
@@ -74,7 +74,7 @@ where δ_i = 1 if i = 0 else 1</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>0-63</string>
+          <string>o0-63</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -88,7 +88,7 @@ where δ_i = 1 if i = 0 else 1</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>64-127</string>
+          <string>o64-127</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -102,7 +102,7 @@ where δ_i = 1 if i = 0 else 1</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>128-191</string>
+          <string>o128-191</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -116,7 +116,7 @@ where δ_i = 1 if i = 0 else 1</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>192-255</string>
+          <string>o192-255</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -204,7 +204,7 @@ where δ_i = 1 if i = 0 else 1</string>
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>256</string>
+          <string>o256</string>
         </entry>
       </elementAttributes>
       <pos x="560" y="680"/>
