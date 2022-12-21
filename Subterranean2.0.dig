@@ -13,7 +13,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>0-63</string>
+          <string>o0-63</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -27,7 +27,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>64-127</string>
+          <string>o64-127</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -41,7 +41,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>128-191</string>
+          <string>o128-191</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -55,7 +55,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>191-255</string>
+          <string>o191-255</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -69,7 +69,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>256</string>
+          <string>o256</string>
         </entry>
       </elementAttributes>
       <pos x="580" y="500"/>
