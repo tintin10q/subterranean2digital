@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>1</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>Width</string>
+      <int>11</int>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>Subterranean_round.dig</elementName>
@@ -91,10 +96,6 @@
           <string>Label</string>
           <string>state_{256}</string>
         </entry>
-        <entry>
-          <string>Bits</string>
-          <int>64</int>
-        </entry>
       </elementAttributes>
       <pos x="-320" y="360"/>
     </visualElement>
@@ -131,7 +132,7 @@
       <elementAttributes>
         <entry>
           <string>Input Splitting</string>
-          <string>0-0,6-6,8-8,9-9,12-12,37-37,41-41,48-48,56-56,61-61,62-62,  1-5,7-7,9-8,10-11,13-36,38-40,42-47,49-55,57-60,62-61,63-63</string>
+          <string>0-0,6-6,8-8,9-9,12-12,37-37,41-41,48-48,56-56,61-61,62-62,  1-5,7-7,10-11,13-36,38-40,42-47,49-55,57-60,63-63</string>
         </entry>
         <entry>
           <string>Output Splitting</string>
@@ -238,7 +239,7 @@
           <string>state&apos;_256</string>
         </entry>
       </elementAttributes>
-      <pos x="460" y="3200"/>
+      <pos x="380" y="3160"/>
     </visualElement>
     <visualElement>
       <elementName>Or</elementName>
@@ -287,7 +288,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>1-5,7-7,9-8,10-11,13-36,38-40,42-47,49-55,57-60,62-61,63-63</string>
+          <string>1-5,7-7,10-11,13-36,38-40,42-47,49-55,57-60,63-63</string>
         </entry>
       </elementAttributes>
       <pos x="520" y="2300"/>
@@ -607,30 +608,6 @@
       <pos x="180" y="2340"/>
     </visualElement>
     <visualElement>
-      <elementName>Or</elementName>
-      <elementAttributes>
-        <entry>
-          <string>wideShape</string>
-          <boolean>true</boolean>
-        </entry>
-      </elementAttributes>
-      <pos x="180" y="3200"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Splitter</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Input Splitting</string>
-          <string>64</string>
-        </entry>
-        <entry>
-          <string>Output Splitting</string>
-          <string>1-1</string>
-        </entry>
-      </elementAttributes>
-      <pos x="140" y="2900"/>
-    </visualElement>
-    <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
@@ -695,7 +672,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>1-1</string>
+          <string>12-12</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="420"/>
@@ -723,7 +700,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>2-2</string>
+          <string>24-24</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="500"/>
@@ -737,7 +714,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>3-3</string>
+          <string>17-17</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="580"/>
@@ -751,7 +728,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>4-4</string>
+          <string>14-14</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="660"/>
@@ -765,7 +742,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>5-5</string>
+          <string>30-30</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="740"/>
@@ -779,7 +756,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>6-6</string>
+          <string>29-29</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="820"/>
@@ -793,7 +770,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>7-7</string>
+          <string>26-26</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="900"/>
@@ -807,7 +784,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>8-8</string>
+          <string>3-3</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="980"/>
@@ -919,7 +896,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>9-9</string>
+          <string>8-8</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1080"/>
@@ -933,7 +910,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>10-10</string>
+          <string>15-15</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1160"/>
@@ -947,7 +924,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>11-11</string>
+          <string>13-13</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1240"/>
@@ -961,7 +938,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>12-12</string>
+          <string>23-23</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1320"/>
@@ -975,7 +952,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>14-14</string>
+          <string>5-5</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1540"/>
@@ -989,7 +966,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>15-15</string>
+          <string>2-2</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1620"/>
@@ -1003,7 +980,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>16-16</string>
+          <string>18-18</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1700"/>
@@ -1073,7 +1050,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>13-13</string>
+          <string>20-20</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1460"/>
@@ -1087,7 +1064,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>17-17</string>
+          <string>27-27</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1780"/>
@@ -1101,7 +1078,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>18-18</string>
+          <string>31-31</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1860"/>
@@ -1115,7 +1092,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>19-19</string>
+          <string>21-21</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="1940"/>
@@ -1129,7 +1106,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>20-20</string>
+          <string>1-1</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2020"/>
@@ -1143,7 +1120,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>21-21</string>
+          <string>11-11</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2100"/>
@@ -1171,7 +1148,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>23-23</string>
+          <string>25-25</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2260"/>
@@ -1339,7 +1316,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>24-24</string>
+          <string>6-6</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2380"/>
@@ -1353,7 +1330,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>25-25</string>
+          <string>19-19</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2460"/>
@@ -1367,7 +1344,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>27-27</string>
+          <string>9-9</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2540"/>
@@ -1381,7 +1358,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>28-28</string>
+          <string>10-10</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2620"/>
@@ -1395,7 +1372,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>29-29</string>
+          <string>28-28</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2700"/>
@@ -1409,7 +1386,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>30-30</string>
+          <string>7-7</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2780"/>
@@ -1423,7 +1400,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>31-31</string>
+          <string>16-16</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2860"/>
@@ -1437,7 +1414,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>32-32</string>
+          <string>4-4</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="2940"/>
@@ -1499,20 +1476,6 @@
       <pos x="140" y="2580"/>
     </visualElement>
     <visualElement>
-      <elementName>Splitter</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Input Splitting</string>
-          <string>32</string>
-        </entry>
-        <entry>
-          <string>Output Splitting</string>
-          <string>32-32</string>
-        </entry>
-      </elementAttributes>
-      <pos x="140" y="3200"/>
-    </visualElement>
-    <visualElement>
       <elementName>Or</elementName>
       <elementAttributes>
         <entry>
@@ -1520,12 +1483,68 @@
           <boolean>true</boolean>
         </entry>
       </elementAttributes>
-      <pos x="320" y="3180"/>
+      <pos x="240" y="3140"/>
     </visualElement>
     <visualElement>
       <elementName>Const</elementName>
       <elementAttributes/>
-      <pos x="260" y="3180"/>
+      <pos x="180" y="3140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>64</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>33-33</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="2660"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>64</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>42-42</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="2740"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>64</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>49-49</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="2820"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>64</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>57-57</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="2900"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -1556,6 +1575,14 @@
     <wire>
       <p1 x="680" y="2820"/>
       <p2 x="740" y="2820"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="2820"/>
+      <p2 x="180" y="2820"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2820"/>
+      <p2 x="140" y="2820"/>
     </wire>
     <wire>
       <p1 x="540" y="3080"/>
@@ -1850,6 +1877,10 @@
       <p2 x="660" y="3140"/>
     </wire>
     <wire>
+      <p1 x="180" y="3140"/>
+      <p2 x="240" y="3140"/>
+    </wire>
+    <wire>
       <p1 x="580" y="840"/>
       <p2 x="640" y="840"/>
     </wire>
@@ -1878,12 +1909,16 @@
       <p2 x="640" y="1360"/>
     </wire>
     <wire>
+      <p1 x="420" y="2900"/>
+      <p2 x="660" y="2900"/>
+    </wire>
+    <wire>
       <p1 x="160" y="2900"/>
       <p2 x="180" y="2900"/>
     </wire>
     <wire>
-      <p1 x="420" y="2900"/>
-      <p2 x="660" y="2900"/>
+      <p1 x="40" y="2900"/>
+      <p2 x="140" y="2900"/>
     </wire>
     <wire>
       <p1 x="160" y="1620"/>
@@ -1908,6 +1943,10 @@
     <wire>
       <p1 x="160" y="340"/>
       <p2 x="180" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="320" y="3160"/>
+      <p2 x="380" y="3160"/>
     </wire>
     <wire>
       <p1 x="560" y="860"/>
@@ -1954,6 +1993,14 @@
       <p2 x="640" y="1380"/>
     </wire>
     <wire>
+      <p1 x="160" y="2660"/>
+      <p2 x="180" y="2660"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2660"/>
+      <p2 x="140" y="2660"/>
+    </wire>
+    <wire>
       <p1 x="-60" y="360"/>
       <p2 x="20" y="360"/>
     </wire>
@@ -1986,8 +2033,8 @@
       <p2 x="140" y="1900"/>
     </wire>
     <wire>
-      <p1 x="260" y="3180"/>
-      <p2 x="320" y="3180"/>
+      <p1 x="20" y="3180"/>
+      <p2 x="240" y="3180"/>
     </wire>
     <wire>
       <p1 x="540" y="880"/>
@@ -2068,18 +2115,6 @@
     <wire>
       <p1 x="260" y="1920"/>
       <p2 x="520" y="1920"/>
-    </wire>
-    <wire>
-      <p1 x="160" y="3200"/>
-      <p2 x="180" y="3200"/>
-    </wire>
-    <wire>
-      <p1 x="120" y="3200"/>
-      <p2 x="140" y="3200"/>
-    </wire>
-    <wire>
-      <p1 x="400" y="3200"/>
-      <p2 x="460" y="3200"/>
     </wire>
     <wire>
       <p1 x="520" y="900"/>
@@ -2170,10 +2205,6 @@
       <p2 x="140" y="1940"/>
     </wire>
     <wire>
-      <p1 x="260" y="3220"/>
-      <p2 x="320" y="3220"/>
-    </wire>
-    <wire>
       <p1 x="500" y="920"/>
       <p2 x="640" y="920"/>
     </wire>
@@ -2222,10 +2253,6 @@
       <p2 x="140" y="420"/>
     </wire>
     <wire>
-      <p1 x="20" y="3240"/>
-      <p2 x="180" y="3240"/>
-    </wire>
-    <wire>
       <p1 x="480" y="940"/>
       <p2 x="640" y="940"/>
     </wire>
@@ -2258,16 +2285,20 @@
       <p2 x="140" y="1200"/>
     </wire>
     <wire>
-      <p1 x="540" y="2480"/>
-      <p2 x="660" y="2480"/>
-    </wire>
-    <wire>
       <p1 x="160" y="1460"/>
       <p2 x="180" y="1460"/>
     </wire>
     <wire>
       <p1 x="120" y="1460"/>
       <p2 x="140" y="1460"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="2740"/>
+      <p2 x="180" y="2740"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2740"/>
+      <p2 x="140" y="2740"/>
     </wire>
     <wire>
       <p1 x="540" y="3000"/>
@@ -2316,10 +2347,6 @@
     <wire>
       <p1 x="40" y="2500"/>
       <p2 x="140" y="2500"/>
-    </wire>
-    <wire>
-      <p1 x="540" y="2500"/>
-      <p2 x="660" y="2500"/>
     </wire>
     <wire>
       <p1 x="260" y="2760"/>
@@ -2527,7 +2554,7 @@
     </wire>
     <wire>
       <p1 x="100" y="1000"/>
-      <p2 x="100" y="3260"/>
+      <p2 x="100" y="3220"/>
     </wire>
     <wire>
       <p1 x="100" y="300"/>
@@ -2582,8 +2609,12 @@
       <p2 x="40" y="2340"/>
     </wire>
     <wire>
+      <p1 x="40" y="2900"/>
+      <p2 x="40" y="2980"/>
+    </wire>
+    <wire>
       <p1 x="40" y="2980"/>
-      <p2 x="40" y="3300"/>
+      <p2 x="40" y="3240"/>
     </wire>
     <wire>
       <p1 x="40" y="2340"/>
@@ -2599,7 +2630,19 @@
     </wire>
     <wire>
       <p1 x="40" y="2580"/>
-      <p2 x="40" y="2980"/>
+      <p2 x="40" y="2660"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2660"/>
+      <p2 x="40" y="2740"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2740"/>
+      <p2 x="40" y="2820"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="2820"/>
+      <p2 x="40" y="2900"/>
     </wire>
     <wire>
       <p1 x="520" y="640"/>
@@ -2655,7 +2698,7 @@
     </wire>
     <wire>
       <p1 x="80" y="1340"/>
-      <p2 x="80" y="3280"/>
+      <p2 x="80" y="3240"/>
     </wire>
     <wire>
       <p1 x="560" y="480"/>
@@ -2671,11 +2714,11 @@
     </wire>
     <wire>
       <p1 x="20" y="360"/>
-      <p2 x="20" y="3240"/>
+      <p2 x="20" y="3180"/>
     </wire>
     <wire>
-      <p1 x="20" y="3240"/>
-      <p2 x="20" y="3280"/>
+      <p1 x="20" y="3180"/>
+      <p2 x="20" y="3220"/>
     </wire>
     <wire>
       <p1 x="500" y="720"/>
@@ -2798,10 +2841,6 @@
       <p2 x="120" y="1160"/>
     </wire>
     <wire>
-      <p1 x="120" y="3200"/>
-      <p2 x="120" y="3220"/>
-    </wire>
-    <wire>
       <p1 x="120" y="2180"/>
       <p2 x="120" y="2260"/>
     </wire>
@@ -2859,7 +2898,7 @@
     </wire>
     <wire>
       <p1 x="60" y="2300"/>
-      <p2 x="60" y="3320"/>
+      <p2 x="60" y="3260"/>
     </wire>
     <wire>
       <p1 x="60" y="1420"/>

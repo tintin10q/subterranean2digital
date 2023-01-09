@@ -21,7 +21,6 @@ def subterranean_duplex(state, sigma):
     for i in range(len(sigma)):
         print(f"\tnew_state[{index_j}] = new_state[{index_j}] ^ sigma[{i}]")
         new_state[index_j] ^= sigma[i]
-        index_j = (176 * index_j) % SUBTERRANEAN_SIZE
 
         s.append((index_j,i))
         if 0 <= index_j <= 63:
@@ -34,6 +33,8 @@ def subterranean_duplex(state, sigma):
             s192_255.append(index_j % 64)
         if 256 <= index_j:
             s256.append(index_j % 64)
+        # Change the value
+        index_j = (176 * index_j) % SUBTERRANEAN_SIZE
 
     s.sort()
     print(f"# {', '.join(f'{i}={i[0] % 64}' for i in s)}")
