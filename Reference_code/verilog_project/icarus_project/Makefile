@@ -1,0 +1,58 @@
+.PHONY: clean
+
+ICARUS_VERILOG_SIMULATOR=iverilog
+ICARUS_VERILOG_VVP=vvp
+ICARUS_VERILOG_DUMP_TYPE=fst
+
+VERILOG_SOURCE_FOLDER=../verilog_source
+
+SUBTERRANEAN_ROUND_SOURCE=\
+	$(VERILOG_SOURCE_FOLDER)/subterranean_round.v
+
+SUBTERRANEAN_ROUNDS_SIMPLE_SOURCE=\
+	$(SUBTERRANEAN_ROUND_SOURCE)\
+	$(VERILOG_SOURCE_FOLDER)/subterranean_rounds_simple_1.v\
+	$(VERILOG_SOURCE_FOLDER)/subterranean_rounds_simple_2.v\
+	$(VERILOG_SOURCE_FOLDER)/subterranean_rounds_simple_4.v
+
+TB_SUBTERRANEAN_ROUND_SOURCE=\
+	$(SUBTERRANEAN_ROUND_SOURCE)\
+	$(VERILOG_SOURCE_FOLDER)/tb_subterranean_round.v
+
+TB_SUBTERRANEAN_ROUNDS_SIMPLE_1_SOURCE=\
+	$(SUBTERRANEAN_ROUNDS_SIMPLE_SOURCE)\
+	$(VERILOG_SOURCE_FOLDER)/tb_subterranean_rounds_simple_1.v
+
+TB_SUBTERRANEAN_ROUNDS_SIMPLE_2_SOURCE=\
+	$(SUBTERRANEAN_ROUNDS_SIMPLE_SOURCE)\
+	$(VERILOG_SOURCE_FOLDER)/tb_subterranean_rounds_simple_2.v
+
+TB_SUBTERRANEAN_ROUNDS_SIMPLE_4_SOURCE=\
+	$(SUBTERRANEAN_ROUNDS_SIMPLE_SOURCE)\
+	$(VERILOG_SOURCE_FOLDER)/tb_subterranean_rounds_simple_4.v
+
+tb_subterranean_round: $(TB_SUBTERRANEAN_ROUND_SOURCE)
+	IVERILOG_DUMPER="$(ICARUS_VERILOG_DUMP_TYPE)" $(ICARUS_VERILOG_SIMULATOR) -s $(@) -o $(@)_design $(TB_SUBTERRANEAN_ROUND_SOURCE)
+	$(ICARUS_VERILOG_VVP) $(@)_design -$(ICARUS_VERILOG_DUMP_TYPE)
+
+tb_subterranean_rounds_simple_1: $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_1_SOURCE)
+	IVERILOG_DUMPER="$(ICARUS_VERILOG_DUMP_TYPE)" $(ICARUS_VERILOG_SIMULATOR) -s $(@) -o $(@)_design $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_1_SOURCE)
+	$(ICARUS_VERILOG_VVP) $(@)_design -$(ICARUS_VERILOG_DUMP_TYPE)
+
+tb_subterranean_rounds_simple_2: $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_2_SOURCE)
+	IVERILOG_DUMPER="$(ICARUS_VERILOG_DUMP_TYPE)" $(ICARUS_VERILOG_SIMULATOR) -s $(@) -o $(@)_design $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_2_SOURCE)
+	$(ICARUS_VERILOG_VVP) $(@)_design -$(ICARUS_VERILOG_DUMP_TYPE)
+
+tb_subterranean_rounds_simple_4: $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_4_SOURCE)
+	IVERILOG_DUMPER="$(ICARUS_VERILOG_DUMP_TYPE)" $(ICARUS_VERILOG_SIMULATOR) -s $(@) -o $(@)_design $(TB_SUBTERRANEAN_ROUNDS_SIMPLE_4_SOURCE)
+	$(ICARUS_VERILOG_VVP) $(@)_design -$(ICARUS_VERILOG_DUMP_TYPE)
+
+clean:
+	@echo "Cleaning up..."
+	rm -f "dump"
+	rm -f "dump.fst"
+	rm -f "tb_subterranean_round_design"
+	rm -f "tb_subterranean_rounds_simple_1_design"
+	rm -f "tb_subterranean_rounds_simple_2_design"
+	rm -f "tb_subterranean_rounds_simple_4_design"
+	@echo "Cleaning done."

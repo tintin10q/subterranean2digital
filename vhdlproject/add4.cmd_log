@@ -1,0 +1,20 @@
+xst -intstyle ise -ifn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.xst" -ofn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 add4.ngc add4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o add4_map.ncd add4.ngd add4.pcf 
+par -w -intstyle ise -ol high -mt off add4_map.ncd add4.ncd add4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml add4.twx add4.ncd -o add4.twr add4.pcf 
+xst -intstyle ise -ifn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.xst" -ofn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 add4.ngc add4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o add4_map.ncd add4.ngd add4.pcf 
+par -w -intstyle ise -ol high -mt off add4_map.ncd add4.ncd add4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml add4.twx add4.ncd -o add4.twr add4.pcf 
+netgen -intstyle ise -s 3  -pcf add4.pcf -sdf_anno true -sdf_path "netgen/map" -insert_glbl true -w -dir netgen/map -ofmt verilog -sim add4_map.ncd add4_map.v 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml add4_preroute.twx add4_map.ncd -o add4_preroute.twr add4.pcf 
+bitgen -intstyle ise -f add4.ut add4.ncd 
+bitgen -intstyle ise -f add4.ut add4.ncd 
+xst -intstyle ise -ifn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.xst" -ofn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/vhdlproject/add4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 add4.ngc add4.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o add4_map.ncd add4.ngd add4.pcf 
+par -w -intstyle ise -ol high -mt off add4_map.ncd add4.ncd add4.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml add4.twx add4.ncd -o add4.twr add4.pcf 
+bitgen -intstyle ise -f add4.ut add4.ncd 
