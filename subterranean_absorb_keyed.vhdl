@@ -1986,44 +1986,6 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
-entity subterranean_duplex_0bit is
-  port (
-    state_0_63: in std_logic_vector(63 downto 0);
-    state_128_191: in std_logic_vector(63 downto 0);
-    state_192_255: in std_logic_vector(63 downto 0);
-    state_64_127: in std_logic_vector(63 downto 0);
-    state_256: in std_logic;
-    D0State_0_63: out std_logic_vector(63 downto 0);
-    D0State_64_127: out std_logic_vector(63 downto 0);
-    D0State_128_191: out std_logic_vector(63 downto 0);
-    D0State_192_255: out std_logic_vector(63 downto 0);
-    D0State_256: out std_logic);
-end subterranean_duplex_0bit;
-
-architecture Behavioral of subterranean_duplex_0bit is
-  signal s0: std_logic_vector(63 downto 0);
-begin
-  gate0: entity work.Subterranean_round
-    port map (
-      n0_63 => state_0_63,
-      n64_127 => state_64_127,
-      n128_191 => state_128_191,
-      n192_255 => state_192_255,
-      n256 => state_256,
-      o0_63 => s0,
-      o64_127 => D0State_64_127,
-      o128_191 => D0State_128_191,
-      o191_255 => D0State_192_255,
-      o256 => D0State_256);
-  D0State_0_63(0) <= s0(0);
-  D0State_0_63(1) <= ('1' XOR s0(1));
-  D0State_0_63(63 downto 2) <= s0(63 downto 2);
-end Behavioral;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-
 entity main is
   port (
     State_in_0_63: in std_logic_vector(63 downto 0);
@@ -2061,10 +2023,6 @@ architecture Behavioral of main is
   signal s17: std_logic_vector(63 downto 0);
   signal s18: std_logic;
   signal s19: std_logic_vector(63 downto 0);
-  signal s20: std_logic_vector(63 downto 0);
-  signal s21: std_logic_vector(63 downto 0);
-  signal s22: std_logic_vector(63 downto 0);
-  signal s23: std_logic;
 begin
   s0 <= value_in_0_63(31 downto 0);
   s1 <= value_in_0_63(63 downto 32);
@@ -2078,60 +2036,51 @@ begin
       state_64_127 => State_in_192_255,
       state_256 => State_in_256,
       sigma => s0,
-      Dstate_0_63 => s9,
-      Dstate_64_127 => s10,
-      Dstate_128_191 => s11,
-      Dstate_192_255 => s12,
-      Dstate_256 => s13);
-  gate1: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s9,
-      state_128_191 => s10,
-      state_192_255 => s11,
-      state_64_127 => s12,
-      state_256 => s13,
-      sigma => s1,
-      Dstate_0_63 => s14,
-      Dstate_64_127 => s15,
-      Dstate_128_191 => s16,
-      Dstate_192_255 => s17,
-      Dstate_256 => s18);
-  gate2: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s14,
-      state_128_191 => s15,
-      state_192_255 => s16,
-      state_64_127 => s17,
-      state_256 => s18,
-      sigma => s2,
-      Dstate_0_63 => s19,
-      Dstate_64_127 => s20,
-      Dstate_128_191 => s21,
-      Dstate_192_255 => s22,
-      Dstate_256 => s23);
-  gate3: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s19,
-      state_128_191 => s20,
-      state_192_255 => s21,
-      state_64_127 => s22,
-      state_256 => s23,
-      sigma => s3,
       Dstate_0_63 => s4,
       Dstate_64_127 => s5,
       Dstate_128_191 => s6,
       Dstate_192_255 => s7,
       Dstate_256 => s8);
-  gate4: entity work.subterranean_duplex_0bit
+  gate1: entity work.subterranean_duplex
     port map (
       state_0_63 => s4,
       state_128_191 => s5,
       state_192_255 => s6,
       state_64_127 => s7,
       state_256 => s8,
-      D0State_0_63 => State_0_63,
-      D0State_64_127 => State_64_127,
-      D0State_128_191 => State_128_191,
-      D0State_192_255 => State_192_255,
-      D0State_256 => State_256);
+      sigma => s1,
+      Dstate_0_63 => s9,
+      Dstate_64_127 => s10,
+      Dstate_128_191 => s11,
+      Dstate_192_255 => s12,
+      Dstate_256 => s13);
+  gate2: entity work.subterranean_duplex
+    port map (
+      state_0_63 => s9,
+      state_128_191 => s10,
+      state_192_255 => s11,
+      state_64_127 => s12,
+      state_256 => s13,
+      sigma => s2,
+      Dstate_0_63 => s14,
+      Dstate_64_127 => s15,
+      Dstate_128_191 => s16,
+      Dstate_192_255 => s17,
+      Dstate_256 => s18);
+  gate3: entity work.subterranean_duplex
+    port map (
+      state_0_63 => s14,
+      state_128_191 => s15,
+      state_192_255 => s16,
+      state_64_127 => s17,
+      state_256 => s18,
+      sigma => s3,
+      Dstate_0_63 => s19,
+      Dstate_64_127 => State_64_127,
+      Dstate_128_191 => State_128_191,
+      Dstate_192_255 => State_192_255,
+      Dstate_256 => State_256);
+  State_0_63(0) <= s19(0);
+  State_0_63(1) <= ('1' XOR s19(1));
+  State_0_63(63 downto 2) <= s19(63 downto 2);
 end Behavioral;
