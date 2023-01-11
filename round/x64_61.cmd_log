@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/round/x64_61.xst" -ofn "/home/qc/School/2022-2023/Selected-Topics-On-Hardware-Security/Assignments/2/subterranean2digital/round/x64_61.syr" 
