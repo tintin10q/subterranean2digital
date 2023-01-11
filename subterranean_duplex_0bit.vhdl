@@ -1882,256 +1882,36 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
-entity subterranean_duplex is
-  port (
-    state_0_63: in std_logic_vector(63 downto 0);
-    state_128_191: in std_logic_vector(63 downto 0);
-    state_192_255: in std_logic_vector(63 downto 0);
-    state_64_127: in std_logic_vector(63 downto 0);
-    state_256: in std_logic;
-    sigma: in std_logic_vector(31 downto 0);
-    Dstate_0_63: out std_logic_vector(63 downto 0);
-    Dstate_64_127: out std_logic_vector(63 downto 0);
-    Dstate_128_191: out std_logic_vector(63 downto 0);
-    Dstate_192_255: out std_logic_vector(63 downto 0);
-    Dstate_256: out std_logic);
-end subterranean_duplex;
-
-architecture Behavioral of subterranean_duplex is
-  signal s0: std_logic_vector(63 downto 0);
-  signal s1: std_logic_vector(63 downto 0);
-  signal s2: std_logic_vector(63 downto 0);
-  signal s3: std_logic_vector(63 downto 0);
-  signal s4: std_logic;
-begin
-  gate0: entity work.Subterranean_round
-    port map (
-      n0_63 => state_0_63,
-      n64_127 => state_64_127,
-      n128_191 => state_128_191,
-      n192_255 => state_192_255,
-      n256 => state_256,
-      o0_63 => s0,
-      o64_127 => s1,
-      o128_191 => s2,
-      o191_255 => s3,
-      o256 => s4);
-  Dstate_0_63(1) <= (s0(1) XOR sigma(0));
-  Dstate_0_63(2) <= (s0(2) XOR sigma(12));
-  Dstate_0_63(4) <= (s0(4) XOR sigma(24));
-  Dstate_0_63(11) <= (s0(11) XOR sigma(17));
-  Dstate_0_63(15) <= (s0(15) XOR sigma(14));
-  Dstate_0_63(17) <= (s0(17) XOR sigma(30));
-  Dstate_0_63(22) <= (s0(22) XOR sigma(29));
-  Dstate_0_63(30) <= (s0(30) XOR sigma(26));
-  Dstate_0_63(35) <= (s0(35) XOR sigma(3));
-  Dstate_0_63(0) <= s0(0);
-  Dstate_0_63(3) <= s0(3);
-  Dstate_0_63(10 downto 5) <= s0(10 downto 5);
-  Dstate_0_63(14 downto 12) <= s0(14 downto 12);
-  Dstate_0_63(16) <= s0(16);
-  Dstate_0_63(21 downto 18) <= s0(21 downto 18);
-  Dstate_0_63(29 downto 23) <= s0(29 downto 23);
-  Dstate_0_63(34 downto 31) <= s0(34 downto 31);
-  Dstate_0_63(63 downto 36) <= s0(63 downto 36);
-  Dstate_64_127(0) <= (s1(0) XOR sigma(8));
-  Dstate_64_127(6) <= (s1(6) XOR sigma(15));
-  Dstate_64_127(31) <= (s1(31) XOR sigma(13));
-  Dstate_64_127(47) <= (s1(47) XOR sigma(23));
-  Dstate_64_127(5 downto 1) <= s1(5 downto 1);
-  Dstate_64_127(30 downto 7) <= s1(30 downto 7);
-  Dstate_64_127(46 downto 32) <= s1(46 downto 32);
-  Dstate_64_127(63 downto 48) <= s1(63 downto 48);
-  Dstate_128_191(0) <= (s2(0) XOR sigma(20));
-  Dstate_128_191(6) <= (s2(6) XOR sigma(5));
-  Dstate_128_191(8) <= (s2(8) XOR sigma(2));
-  Dstate_128_191(9) <= (s2(9) XOR sigma(18));
-  Dstate_128_191(12) <= (s2(12) XOR sigma(27));
-  Dstate_128_191(37) <= (s2(37) XOR sigma(31));
-  Dstate_128_191(41) <= (s2(41) XOR sigma(21));
-  Dstate_128_191(48) <= (s2(48) XOR sigma(1));
-  Dstate_128_191(56) <= (s2(56) XOR sigma(11));
-  Dstate_128_191(61) <= (s2(61) XOR sigma(22));
-  Dstate_128_191(62) <= (s2(62) XOR sigma(25));
-  Dstate_128_191(5 downto 1) <= s2(5 downto 1);
-  Dstate_128_191(7) <= s2(7);
-  Dstate_128_191(11 downto 10) <= s2(11 downto 10);
-  Dstate_128_191(36 downto 13) <= s2(36 downto 13);
-  Dstate_128_191(40 downto 38) <= s2(40 downto 38);
-  Dstate_128_191(47 downto 42) <= s2(47 downto 42);
-  Dstate_128_191(55 downto 49) <= s2(55 downto 49);
-  Dstate_128_191(60 downto 57) <= s2(60 downto 57);
-  Dstate_128_191(63) <= s2(63);
-  Dstate_192_255(5) <= (s3(5) XOR sigma(6));
-  Dstate_192_255(19) <= (s3(19) XOR sigma(19));
-  Dstate_192_255(21) <= (s3(21) XOR sigma(9));
-  Dstate_192_255(31) <= (s3(31) XOR sigma(10));
-  Dstate_192_255(33) <= (s3(33) XOR sigma(28));
-  Dstate_192_255(42) <= (s3(42) XOR sigma(7));
-  Dstate_192_255(49) <= (s3(49) XOR sigma(16));
-  Dstate_192_255(57) <= (s3(57) XOR sigma(4));
-  Dstate_192_255(4 downto 0) <= s3(4 downto 0);
-  Dstate_192_255(18 downto 6) <= s3(18 downto 6);
-  Dstate_192_255(20) <= s3(20);
-  Dstate_192_255(30 downto 22) <= s3(30 downto 22);
-  Dstate_192_255(32) <= s3(32);
-  Dstate_192_255(41 downto 34) <= s3(41 downto 34);
-  Dstate_192_255(48 downto 43) <= s3(48 downto 43);
-  Dstate_192_255(56 downto 50) <= s3(56 downto 50);
-  Dstate_192_255(63 downto 58) <= s3(63 downto 58);
-  Dstate_256 <= ('1' XOR s4);
-end Behavioral;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-
-entity subterranean_duplex_0bit is
-  port (
-    state_0_63: in std_logic_vector(63 downto 0);
-    state_128_191: in std_logic_vector(63 downto 0);
-    state_192_255: in std_logic_vector(63 downto 0);
-    state_64_127: in std_logic_vector(63 downto 0);
-    state_256: in std_logic;
-    D0State_0_63: out std_logic_vector(63 downto 0);
-    D0State_64_127: out std_logic_vector(63 downto 0);
-    D0State_128_191: out std_logic_vector(63 downto 0);
-    D0State_192_255: out std_logic_vector(63 downto 0);
-    D0State_256: out std_logic);
-end subterranean_duplex_0bit;
-
-architecture Behavioral of subterranean_duplex_0bit is
-  signal s0: std_logic_vector(63 downto 0);
-begin
-  gate0: entity work.Subterranean_round
-    port map (
-      n0_63 => state_0_63,
-      n64_127 => state_64_127,
-      n128_191 => state_128_191,
-      n192_255 => state_192_255,
-      n256 => state_256,
-      o0_63 => s0,
-      o64_127 => D0State_64_127,
-      o128_191 => D0State_128_191,
-      o191_255 => D0State_192_255,
-      o256 => D0State_256);
-  D0State_0_63(0) <= s0(0);
-  D0State_0_63(1) <= ('1' XOR s0(1));
-  D0State_0_63(63 downto 2) <= s0(63 downto 2);
-end Behavioral;
-
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;
-
 entity main is
   port (
-    State_in_0_63: in std_logic_vector(63 downto 0);
-    State_in_128_191: in std_logic_vector(63 downto 0);
-    State_in_192_255: in std_logic_vector(63 downto 0);
-    State_in_64_127: in std_logic_vector(63 downto 0);
-    State_in_256: in std_logic;
-    value_in_0_63: in std_logic_vector(63 downto 0);
-    value_in_64_127: in std_logic_vector(63 downto 0);
-    State_0_63: out std_logic_vector(63 downto 0);
-    State_64_127: out std_logic_vector(63 downto 0);
-    State_128_191: out std_logic_vector(63 downto 0);
-    State_192_255: out std_logic_vector(63 downto 0);
-    State_256: out std_logic);
+    state_0_63: in std_logic_vector(63 downto 0);
+    state_128_191: in std_logic_vector(63 downto 0);
+    state_192_255: in std_logic_vector(63 downto 0);
+    state_64_127: in std_logic_vector(63 downto 0);
+    state_256: in std_logic;
+    OutState_0_63: out std_logic_vector(63 downto 0);
+    OutState_64_127: out std_logic_vector(63 downto 0);
+    OutState_128_191: out std_logic_vector(63 downto 0);
+    OutState_192_255: out std_logic_vector(63 downto 0);
+    OutState_256: out std_logic);
 end main;
 
 architecture Behavioral of main is
-  signal s0: std_logic_vector(31 downto 0);
-  signal s1: std_logic_vector(31 downto 0);
-  signal s2: std_logic_vector(31 downto 0);
-  signal s3: std_logic_vector(31 downto 0);
-  signal s4: std_logic_vector(63 downto 0);
-  signal s5: std_logic_vector(63 downto 0);
-  signal s6: std_logic_vector(63 downto 0);
-  signal s7: std_logic_vector(63 downto 0);
-  signal s8: std_logic;
-  signal s9: std_logic_vector(63 downto 0);
-  signal s10: std_logic_vector(63 downto 0);
-  signal s11: std_logic_vector(63 downto 0);
-  signal s12: std_logic_vector(63 downto 0);
-  signal s13: std_logic;
-  signal s14: std_logic_vector(63 downto 0);
-  signal s15: std_logic_vector(63 downto 0);
-  signal s16: std_logic_vector(63 downto 0);
-  signal s17: std_logic_vector(63 downto 0);
-  signal s18: std_logic;
-  signal s19: std_logic_vector(63 downto 0);
-  signal s20: std_logic_vector(63 downto 0);
-  signal s21: std_logic_vector(63 downto 0);
-  signal s22: std_logic_vector(63 downto 0);
-  signal s23: std_logic;
+  signal s0: std_logic_vector(63 downto 0);
 begin
-  s0 <= value_in_0_63(31 downto 0);
-  s1 <= value_in_0_63(63 downto 32);
-  s2 <= value_in_64_127(31 downto 0);
-  s3 <= value_in_64_127(63 downto 32);
-  gate0: entity work.subterranean_duplex
+  gate0: entity work.Subterranean_round
     port map (
-      state_0_63 => State_in_0_63,
-      state_128_191 => State_in_64_127,
-      state_192_255 => State_in_128_191,
-      state_64_127 => State_in_192_255,
-      state_256 => State_in_256,
-      sigma => s0,
-      Dstate_0_63 => s9,
-      Dstate_64_127 => s10,
-      Dstate_128_191 => s11,
-      Dstate_192_255 => s12,
-      Dstate_256 => s13);
-  gate1: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s9,
-      state_128_191 => s10,
-      state_192_255 => s11,
-      state_64_127 => s12,
-      state_256 => s13,
-      sigma => s1,
-      Dstate_0_63 => s14,
-      Dstate_64_127 => s15,
-      Dstate_128_191 => s16,
-      Dstate_192_255 => s17,
-      Dstate_256 => s18);
-  gate2: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s14,
-      state_128_191 => s15,
-      state_192_255 => s16,
-      state_64_127 => s17,
-      state_256 => s18,
-      sigma => s2,
-      Dstate_0_63 => s19,
-      Dstate_64_127 => s20,
-      Dstate_128_191 => s21,
-      Dstate_192_255 => s22,
-      Dstate_256 => s23);
-  gate3: entity work.subterranean_duplex
-    port map (
-      state_0_63 => s19,
-      state_128_191 => s20,
-      state_192_255 => s21,
-      state_64_127 => s22,
-      state_256 => s23,
-      sigma => s3,
-      Dstate_0_63 => s4,
-      Dstate_64_127 => s5,
-      Dstate_128_191 => s6,
-      Dstate_192_255 => s7,
-      Dstate_256 => s8);
-  gate4: entity work.subterranean_duplex_0bit
-    port map (
-      state_0_63 => s4,
-      state_128_191 => s5,
-      state_192_255 => s6,
-      state_64_127 => s7,
-      state_256 => s8,
-      D0State_0_63 => State_0_63,
-      D0State_64_127 => State_64_127,
-      D0State_128_191 => State_128_191,
-      D0State_192_255 => State_192_255,
-      D0State_256 => State_256);
+      n0_63 => state_0_63,
+      n64_127 => state_64_127,
+      n128_191 => state_128_191,
+      n192_255 => state_192_255,
+      n256 => state_256,
+      o0_63 => s0,
+      o64_127 => OutState_64_127,
+      o128_191 => OutState_128_191,
+      o191_255 => OutState_192_255,
+      o256 => OutState_256);
+  OutState_0_63(0) <= s0(0);
+  OutState_0_63(1) <= ('1' XOR s0(1));
+  OutState_0_63(63 downto 2) <= s0(63 downto 2);
 end Behavioral;

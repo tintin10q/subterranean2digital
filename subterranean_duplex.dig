@@ -164,7 +164,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>state&apos;_{0-63}</string>
+          <string>Dstate&apos;_{0-63}</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -182,7 +182,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>state&apos;_{64-127}</string>
+          <string>Dstate&apos;_{64-127}</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -200,7 +200,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>state&apos;_{128-191}</string>
+          <string>Dstate&apos;_{128-191}</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -218,7 +218,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>state&apos;_{192-255}</string>
+          <string>Dstate&apos;_{192-255}</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -236,7 +236,7 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>state&apos;_256</string>
+          <string>Dstate&apos;_256</string>
         </entry>
       </elementAttributes>
       <pos x="380" y="3160"/>
