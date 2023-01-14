@@ -3,16 +3,15 @@
   <version>1</version>
   <attributes>
     <entry>
+      <string>Label</string>
+      <string>Duplex</string>
+    </entry>
+    <entry>
       <string>Width</string>
       <int>11</int>
     </entry>
   </attributes>
   <visualElements>
-    <visualElement>
-      <elementName>Subterranean_round.dig</elementName>
-      <elementAttributes/>
-      <pos x="-260" y="280"/>
-    </visualElement>
     <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
@@ -1545,6 +1544,11 @@
         </entry>
       </elementAttributes>
       <pos x="240" y="3140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>subterranean_round.dig</elementName>
+      <elementAttributes/>
+      <pos x="-260" y="280"/>
     </visualElement>
   </visualElements>
   <wires>

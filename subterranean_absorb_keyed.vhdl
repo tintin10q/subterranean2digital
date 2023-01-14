@@ -5,6 +5,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
+-- x1 of chi
 entity x is
   port (
     s: in std_logic_vector(2 downto 0);
@@ -20,6 +21,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
+-- x64 of chi
 entity x64_61 is
   port (
     i_64: in std_logic_vector(63 downto 0);
@@ -531,7 +533,7 @@ USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
 -- ? : s_i ? s_i + (s_i+1 + 1)s_i+2 ,
-entity  is
+entity chi is
   port (
     n64_127: in std_logic_vector(63 downto 0);
     n128_191: in std_logic_vector(63 downto 0);
@@ -543,9 +545,9 @@ entity  is
     o128_191: out std_logic_vector(63 downto 0);
     o192_255: out std_logic_vector(63 downto 0);
     o256: out std_logic);
-end ;
+end chi;
 
-architecture Behavioral of  is
+architecture Behavioral of chi is
   signal s0: std_logic_vector(63 downto 0);
   signal s1: std_logic_vector(61 downto 0);
   signal s2: std_logic;
@@ -691,7 +693,7 @@ USE ieee.numeric_std.all;
 
 -- ? : si ? si + ?i
 -- where ?_i = 1 if i = 0 else 1
-entity  is
+entity i is
   port (
     n64_127: in std_logic_vector(63 downto 0);
     n128_191: in std_logic_vector(63 downto 0);
@@ -703,9 +705,9 @@ entity  is
     o128_191: out std_logic_vector(63 downto 0);
     o192_255: out std_logic_vector(63 downto 0);
     o256: out std_logic);
-end ;
+end i;
 
-architecture Behavioral of  is
+architecture Behavioral of i is
 begin
   o0_63(0) <= (n0_63(0) XOR '1');
   o0_63(63 downto 1) <= n0_63(63 downto 1);
@@ -720,7 +722,7 @@ USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
 -- ? : s_i ? s_i + s_i+3 + s_i+8 ,
-entity  is
+entity thetha is
   port (
     n0_63: in std_logic_vector(63 downto 0);
     n64_127: in std_logic_vector(63 downto 0);
@@ -732,9 +734,9 @@ entity  is
     o128_191: out std_logic_vector(63 downto 0);
     o192_255: out std_logic_vector(63 downto 0);
     o256: out std_logic);
-end ;
+end thetha;
 
-architecture Behavioral of  is
+architecture Behavioral of thetha is
   signal s0: std_logic;
   signal s1: std_logic;
   signal s2: std_logic;
@@ -1518,7 +1520,7 @@ USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
 -- ? : s_i ? s_12i
-entity  is
+entity pi is
   port (
     n64_127: in std_logic_vector(63 downto 0);
     n128_191: in std_logic_vector(63 downto 0);
@@ -1530,9 +1532,9 @@ entity  is
     o128_191: out std_logic_vector(63 downto 0);
     o192_255: out std_logic_vector(63 downto 0);
     o256: out std_logic);
-end ;
+end pi;
 
-architecture Behavioral of  is
+architecture Behavioral of pi is
 begin
   o0_63(0) <= n0_63(0);
   o0_63(1) <= n0_63(12);
@@ -1797,7 +1799,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
-entity Subterranean_round is
+entity subterranean_round is
   port (
     n0_63: in std_logic_vector(63 downto 0);
     n64_127: in std_logic_vector(63 downto 0);
@@ -1809,9 +1811,9 @@ entity Subterranean_round is
     o128_191: out std_logic_vector(63 downto 0);
     o191_255: out std_logic_vector(63 downto 0);
     o256: out std_logic);
-end Subterranean_round;
+end subterranean_round;
 
-architecture Behavioral of Subterranean_round is
+architecture Behavioral of subterranean_round is
   signal s0: std_logic_vector(63 downto 0);
   signal s1: std_logic_vector(63 downto 0);
   signal s2: std_logic_vector(63 downto 0);
@@ -1828,7 +1830,7 @@ architecture Behavioral of Subterranean_round is
   signal s13: std_logic_vector(63 downto 0);
   signal s14: std_logic;
 begin
-  gate0: entity work.
+  gate0: entity work.chi
     port map (
       n64_127 => n0_63,
       n128_191 => n64_127,
@@ -1840,7 +1842,7 @@ begin
       o128_191 => s2,
       o192_255 => s3,
       o256 => s4);
-  gate1: entity work.
+  gate1: entity work.i
     port map (
       n64_127 => s0,
       n128_191 => s1,
@@ -1852,7 +1854,7 @@ begin
       o128_191 => s7,
       o192_255 => s8,
       o256 => s9);
-  gate2: entity work.
+  gate2: entity work.thetha
     port map (
       n0_63 => s5,
       n64_127 => s6,
@@ -1864,7 +1866,7 @@ begin
       o128_191 => s12,
       o192_255 => s13,
       o256 => s14);
-  gate3: entity work.
+  gate3: entity work.pi
     port map (
       n64_127 => s10,
       n128_191 => s11,
@@ -1904,7 +1906,7 @@ architecture Behavioral of subterranean_duplex is
   signal s3: std_logic_vector(63 downto 0);
   signal s4: std_logic;
 begin
-  gate0: entity work.Subterranean_round
+  gate0: entity work.subterranean_round
     port map (
       n0_63 => state_0_63,
       n64_127 => state_64_127,

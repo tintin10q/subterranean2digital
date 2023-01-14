@@ -9,11 +9,6 @@
   </attributes>
   <visualElements>
     <visualElement>
-      <elementName>Subterranean_round.dig</elementName>
-      <elementAttributes/>
-      <pos x="340" y="440"/>
-    </visualElement>
-    <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
@@ -239,6 +234,11 @@
         </entry>
       </elementAttributes>
       <pos x="880" y="520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>subterranean_round.dig</elementName>
+      <elementAttributes/>
+      <pos x="340" y="440"/>
     </visualElement>
   </visualElements>
   <wires>

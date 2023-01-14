@@ -3,16 +3,15 @@
   <version>1</version>
   <attributes>
     <entry>
+      <string>Label</string>
+      <string>R</string>
+    </entry>
+    <entry>
       <string>Width</string>
       <int>10</int>
     </entry>
   </attributes>
   <visualElements>
-    <visualElement>
-      <elementName>χ.dig</elementName>
-      <elementAttributes/>
-      <pos x="-520" y="340"/>
-    </visualElement>
     <visualElement>
       <elementName>Out</elementName>
       <elementAttributes>
@@ -170,17 +169,22 @@
       <pos x="-600" y="500"/>
     </visualElement>
     <visualElement>
-      <elementName>ι.dig</elementName>
+      <elementName>chi.dig</elementName>
+      <elementAttributes/>
+      <pos x="-520" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>i.dig</elementName>
       <elementAttributes/>
       <pos x="-280" y="340"/>
     </visualElement>
     <visualElement>
-      <elementName>θ.dig</elementName>
+      <elementName>thetha.dig</elementName>
       <elementAttributes/>
       <pos x="-20" y="340"/>
     </visualElement>
     <visualElement>
-      <elementName>π.dig</elementName>
+      <elementName>pi.dig</elementName>
       <elementAttributes/>
       <pos x="240" y="340"/>
     </visualElement>

@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
   <version>1</version>
-  <attributes/>
+  <attributes>
+    <entry>
+      <string>Label</string>
+      <string>absorbKey</string>
+    </entry>
+  </attributes>
   <visualElements>
     <visualElement>
       <elementName>In</elementName>
@@ -335,6 +340,21 @@
         </entry>
       </elementAttributes>
       <pos x="1840" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>State_in_{0-63} State_in_{128-191} State_in_{192-255} State_in_{64-127} State_in_{256} value-in_{0-63} value-in_{64-127} State&apos;_{0-63} State&apos;_{64-127} State&apos;_{128-191} State&apos;_{192-255} State&apos;_256
+0x0 0x0 0x0 0x0 0 0x0 0x0 0x6168ffeb39984b7 0x92583e62104b7b31 0x4f1a43be51a8dc 0x93ceb1620ee96237 1
+0x6 0x0 0x0 0x0 0 0x0 0x0 0xe3a866b635c62363 0xca26df7d89b1e1e2 0xdd389318c34e21cf 0x3eb0cc777445462c 0
+</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="740"/>
     </visualElement>
   </visualElements>
   <wires>
